@@ -1,0 +1,15 @@
+.topbar {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: #26262b;
+}
+
+.topbar .title {
+  font-size: 50px;
+  color: #ffffff;
+  font-family: "Inconsolata", monospace;
+  text-decoration: underline;
+  text-align: center;
+}

@@ -1,0 +1,12 @@
+.body-container {
+  flex: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #26262b;
+}
+
+.body-container .terminal {
+  flex: 1;
+  max-width: 80%;
+}
