@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# CYOA-frontend
+
+This is to accompany the Go project at https://github.com/PhilWhittingham/CYOA-backend
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
