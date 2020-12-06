@@ -11,7 +11,7 @@ export const Welcome = ({ reloadFlag }) => {
       description: "Begin the adventure",
       fn: async function () {
         await timeout(2000);
-        await axios.put(API_URL_LOCATION, { location: "Forest" });
+        await axios.put(API_URL_LOCATION, { location: "Forest1" });
         reloadFlag(true);
         return ``;
       },

@@ -15,8 +15,8 @@ export const Village1 = ({ reloadFlag, choiceItems }) => {
           setChoiceMade,
           "Forest2",
           choiceItems[1],
-          `You give the guards a stony-faced "yes".\n`,
-          `"Hmm, sorry buddy, town's full. Try the next one over, I'm sure they're open for beaten up losers."\n` +
+          `You give the guards a stony-faced "yes".\n` +
+            `"Hmm, sorry buddy, town's full. Try the next one over, I'm sure they're open for beaten up losers."\n` +
             `Returning back the way you came, you hear one of the guards shout.\n` +
             `"Watch yourself tonight! We're hearing sightings of Gamooth's army"\n` +
             `You continue, and wonder what a "Gamooth" is. Heading back into the forest\n` +
