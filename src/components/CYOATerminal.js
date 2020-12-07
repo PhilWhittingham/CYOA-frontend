@@ -3,7 +3,7 @@ import Terminal from "react-console-emulator";
 
 import "../css/CYOATerminal.css";
 
-export const CYOATerminal = ({ commands, startText, location }) => {
+export const CYOATerminal = ({ commands, startText, location, ref }) => {
   return (
     <Terminal
       style={{ maxHeight: "300px" }}
