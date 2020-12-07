@@ -1,6 +1,12 @@
 import axios from "axios";
 
-import { API_URL_LOCATION, API_URL_ITEM } from "../constants";
+import {
+  API_URL_LOCATION,
+  API_URL_ITEM,
+  API_URL_WIZARD,
+  API_URL_CURSED,
+  API_URL_RESTED,
+} from "../constants";
 
 export function timeout(delay) {
   return new Promise((res) => setTimeout(res, delay));
@@ -13,7 +19,8 @@ export async function choiceFunction(
   adventItem,
   returnMessage,
   returnText,
-  returnNumber
+  returnNumber,
+  modifier = null
 ) {
   if (choiceMade) {
     return `The hand has already been dealt`;
@@ -27,6 +34,13 @@ export async function choiceFunction(
       num = response.data.day;
       msg = response.data.text;
     });
+    if (modifier === "cursed") {
+      await axios.post(API_URL_CURSED);
+    } else if (modifier === "wizard") {
+      await axios.post(API_URL_WIZARD);
+    } else if (modifier === "rested") {
+      await axios.post(API_URL_RESTED);
+    }
     setChoiceMade(true);
     return (
       returnMessage +

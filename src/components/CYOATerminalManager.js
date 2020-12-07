@@ -57,39 +57,44 @@ const CYOAMapping = {
 export const CYOATerminalManager = () => {
   const [playerDetails, setPlayerDetails] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [reloadCounter, setReloadCounter] = useState(0);
 
   useEffect(() => {
-    reloadPlayerDetails();
-  }, []);
+    setLoading(true);
+    axios
+      .get(API_URL_PLAYER)
+      .then((response) => {
+        setPlayerDetails(response.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        if (!err.response) {
+          console.log("Connection error; check backend and configuration.");
+        }
+        console.log(err); // TODO - not ideal but works for now.
+      });
+  }, [reloadCounter]);
 
-  const reloadPlayerDetails = () => {
-    axios.get(API_URL_PLAYER).then((response) => {
-      setPlayerDetails(response.data);
-      setLoading(false);
-    });
+  const incrementReloadCounter = () => {
+    setReloadCounter(reloadCounter + 1);
   };
 
   if (loading) {
-    reloadPlayerDetails();
-    return <Loading reloadFlag={setLoading} />;
+    return <Loading reloadFlag={incrementReloadCounter} />;
   } else {
     if (playerDetails.location === "Start") {
-      return <Welcome reloadFlag={setLoading} />;
-
-      //////////////////
-      ///// FOREST /////
-      //////////////////
+      return <Welcome reloadFlag={incrementReloadCounter} />;
     } else if (playerDetails.location === "Forest1") {
       return (
         <Forest1
-          reloadFlag={setLoading}
+          reloadFlag={incrementReloadCounter}
           choiceItems={CYOAMapping[playerDetails.location]}
         />
       );
     } else if (playerDetails.location === "Forest2") {
       return (
         <Forest2
-          reloadFlag={setLoading}
+          reloadFlag={incrementReloadCounter}
           choiceItems={CYOAMapping[playerDetails.location]}
         />
       );
@@ -100,14 +105,14 @@ export const CYOATerminalManager = () => {
     } else if (playerDetails.location === "Village1") {
       return (
         <Village1
-          reloadFlag={setLoading}
+          reloadFlag={incrementReloadCounter}
           choiceItems={CYOAMapping[playerDetails.location]}
         />
       );
     } else if (playerDetails.location === "Village2") {
       return (
         <Village2
-          reloadFlag={setLoading}
+          reloadFlag={incrementReloadCounter}
           choiceItems={CYOAMapping[playerDetails.location]}
         />
       );
@@ -118,35 +123,35 @@ export const CYOATerminalManager = () => {
     } else if (playerDetails.location === "Tree1") {
       return (
         <Tree1
-          reloadFlag={setLoading}
+          reloadFlag={incrementReloadCounter}
           choiceItems={CYOAMapping[playerDetails.location]}
         />
       );
     } else if (playerDetails.location === "Tree2") {
       return (
         <Tree2
-          reloadFlag={setLoading}
+          reloadFlag={incrementReloadCounter}
           choiceItems={CYOAMapping[playerDetails.location]}
         />
       );
     } else if (playerDetails.location === "Tree3") {
       return (
         <Tree3
-          reloadFlag={setLoading}
+          reloadFlag={incrementReloadCounter}
           choiceItems={CYOAMapping[playerDetails.location]}
         />
       );
     } else if (playerDetails.location === "Tree4") {
       return (
         <Tree4
-          reloadFlag={setLoading}
+          reloadFlag={incrementReloadCounter}
           choiceItems={CYOAMapping[playerDetails.location]}
         />
       );
     } else if (playerDetails.location === "Tree5") {
       return (
         <Tree5
-          reloadFlag={setLoading}
+          reloadFlag={incrementReloadCounter}
           choiceItems={CYOAMapping[playerDetails.location]}
         />
       );
@@ -157,12 +162,12 @@ export const CYOATerminalManager = () => {
     } else if (playerDetails.location === "Clearing1") {
       return (
         <Clearing1
-          reloadFlag={setLoading}
+          reloadFlag={incrementReloadCounter}
           choiceItems={CYOAMapping[playerDetails.location]}
         />
       );
     } else {
-      return <Void reloadFlag={setLoading} />;
+      return <Void reloadFlag={incrementReloadCounter} />;
     }
   }
 };
