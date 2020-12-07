@@ -4,17 +4,17 @@ import axios from "axios";
 import { Welcome } from "../terminals/Welcome";
 import { Forest1, Forest2 } from "../terminals/Forest";
 import { Village1, Village2 } from "../terminals/Village";
-import { Tree1, Tree2, Tree3, Tree4, Tree5 } from "../terminals/Tree";
+import { Tree1, Tree2, Tree3, Tree4, Tree5, Tree6 } from "../terminals/Tree";
+import { Clearing1 } from "../terminals/Clearing";
+import { Loading } from "../terminals/Loading";
 import { Void } from "../terminals/Void";
 
 import { API_URL_PLAYER } from "../constants";
-import { Clearing1 } from "../terminals/Clearing";
-import { Loading } from "../terminals/Loading";
 
 const CYOAMapping = {
   Forest1: {
     1: 10,
-    2: 18,
+    2: 19,
   },
   Forest2: {
     1: 18,
@@ -151,6 +151,13 @@ export const CYOATerminalManager = () => {
     } else if (playerDetails.location === "Tree5") {
       return (
         <Tree5
+          reloadFlag={incrementReloadCounter}
+          choiceItems={CYOAMapping[playerDetails.location]}
+        />
+      );
+    } else if (playerDetails.location === "Tree6") {
+      return (
+        <Tree6
           reloadFlag={incrementReloadCounter}
           choiceItems={CYOAMapping[playerDetails.location]}
         />

@@ -123,7 +123,11 @@ export const Village2 = ({ reloadFlag, choiceItems }) => {
   };
 
   const welcomeText = [
-    "",
+    'The guards make way and let you into the village. "Good luck in there!"',
+    "the one on the right (formally the one on the left) sniggers as you pass.",
+    "Beyond the boundary, the village opens into a vista of cobbled streets and",
+    "wonky architecture. You pass a few open doors and catch sight of an inn which",
+    'has a bright, non-neon "VACANCY" sign in the window.',
     ".",
     ".",
     ".",
