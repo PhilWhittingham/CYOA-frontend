@@ -232,7 +232,13 @@ export const Tree4 = ({ reloadFlag, choiceItems, cursed }) => {
           setChoiceMade,
           "Clearing1",
           choiceItems[1],
-          `"Sure, I'll say hi"`,
+          `"Sure, I'll say hi" you agree. What trouble could it bring anyways?\n` +
+            `"Great", The elf continues but the words take a sombre tone. "But from here\n` +
+            `on out, you need to watch yourself. I trust you've noticed some things\n` +
+            `in this world aren't all together. You see, there's Gamooth's armies massing\n` +
+            `in the north. Ever sinced they mobilised, things haven't been quite the same."\n` +
+            `Bewildered, you nod. "Anyways, I may have said too much. Watch yourself out there."\n` +
+            `The elf hands you a package to deliver. The note has a message and a number.\n`,
           `The message is`,
           `The number is`
         ),
@@ -245,7 +251,14 @@ export const Tree4 = ({ reloadFlag, choiceItems, cursed }) => {
           setChoiceMade,
           "Clearing1",
           choiceItems[2],
-          ``,
+          `You decline. "Not a chance, with what I've seen around here, how can I trust you?"\n` +
+            `"Shame...", The elf continues but the words take a sombre tone. "But from here\n` +
+            `on out, you need to watch yourself. I trust you've noticed some things\n` +
+            `in this world aren't all together. You see, there's Gamooth's armies massing\n` +
+            `in the north. Ever sinced they mobilised, things haven't been quite the same."\n` +
+            `Bewildered, you nod. "Anyways, I may have said too much. Watch yourself out there."\n` +
+            `The elf bids you well, he shouts something unclear to you from the base of the tree.\n` +
+            `The words form a message, and there's a number there too...\n`,
           `The message is`,
           `The number is`
         ),
