@@ -6,6 +6,9 @@ import { Forest1, Forest2 } from "../terminals/Forest";
 import { Village1, Village2 } from "../terminals/Village";
 import { Tree1, Tree2, Tree3, Tree4, Tree5, Tree6 } from "../terminals/Tree";
 import { Clearing1 } from "../terminals/Clearing";
+import { Swamp1 } from "../terminals/Swamp";
+import { Cave1 } from "../terminals/Cave";
+import { Castle1 } from "../terminals/Castle";
 import { Loading } from "../terminals/Loading";
 import { Void } from "../terminals/Void";
 
@@ -167,6 +170,39 @@ export const CYOATerminalManager = () => {
       //// CLEARING ////
       //////////////////
     } else if (playerDetails.location === "Clearing1") {
+      return (
+        <Clearing1
+          reloadFlag={incrementReloadCounter}
+          choiceItems={CYOAMapping[playerDetails.location]}
+        />
+      );
+
+      //////////////////
+      ///// SWAMP //////
+      //////////////////
+    } else if (playerDetails.location === "Swamp1") {
+      return (
+        <Clearing1
+          reloadFlag={incrementReloadCounter}
+          choiceItems={CYOAMapping[playerDetails.location]}
+        />
+      );
+
+      //////////////////
+      ////// CAVE //////
+      //////////////////
+    } else if (playerDetails.location === "Cave1") {
+      return (
+        <Clearing1
+          reloadFlag={incrementReloadCounter}
+          choiceItems={CYOAMapping[playerDetails.location]}
+        />
+      );
+
+      //////////////////
+      ///// CASTLE /////
+      //////////////////
+    } else if (playerDetails.location === "Castle1") {
       return (
         <Clearing1
           reloadFlag={incrementReloadCounter}
