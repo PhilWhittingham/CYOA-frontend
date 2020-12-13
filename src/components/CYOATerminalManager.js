@@ -52,7 +52,7 @@ const CYOAMapping = {
     2: 9,
   },
   Clearing1: {
-    1: 7,
+    1: 13,
     2: 9,
   },
 };
@@ -182,7 +182,7 @@ export const CYOATerminalManager = () => {
       //////////////////
     } else if (playerDetails.location === "Swamp1") {
       return (
-        <Clearing1
+        <Swamp1
           reloadFlag={incrementReloadCounter}
           choiceItems={CYOAMapping[playerDetails.location]}
         />
@@ -193,7 +193,7 @@ export const CYOATerminalManager = () => {
       //////////////////
     } else if (playerDetails.location === "Cave1") {
       return (
-        <Clearing1
+        <Cave1
           reloadFlag={incrementReloadCounter}
           choiceItems={CYOAMapping[playerDetails.location]}
         />
@@ -204,7 +204,7 @@ export const CYOATerminalManager = () => {
       //////////////////
     } else if (playerDetails.location === "Castle1") {
       return (
-        <Clearing1
+        <Castle1
           reloadFlag={incrementReloadCounter}
           choiceItems={CYOAMapping[playerDetails.location]}
         />
