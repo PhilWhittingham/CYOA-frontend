@@ -55,6 +55,18 @@ const CYOAMapping = {
     1: 13,
     2: 9,
   },
+  Swamp1: {
+    1: 17,
+    2: 15,
+  },
+  Swamp2: {
+    1: 14,
+    2: 21,
+  },
+  Swamp3: {
+    1: 23,
+    2: 9,
+  },
 };
 
 export const CYOATerminalManager = () => {
