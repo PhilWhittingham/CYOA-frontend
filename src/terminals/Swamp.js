@@ -131,7 +131,7 @@ export const Swamp2 = ({ reloadFlag, choiceItems }) => {
 
   const welcomeText = [
     "You wait a few more moments and rise from the water. You believed you were safe, but",
-    'but you find yourself surrounded. "KNEW YOU\'D COME UP EVENTUALLY" an orc barks at you',
+    'you find yourself surrounded. "KNEW YOU\'D COME UP EVENTUALLY" an orc barks at you',
     "angrily. \"we was beginnin' to think you'd died down there\" another mocks. A smaller orc",
     'grabs you by your tunic "LOOKS LIKE MEATS BACK ON THE MENU BOYS" and tosses you over it\'s',
     "shoulder, much to the excitement of the group that surround you.",
@@ -217,30 +217,43 @@ export const Swamp4 = ({ reloadFlag, choiceItems }) => {
 
   const commands = {
     injury: {
-      description: "Hide  the swamp water",
+      description: "Feign a fatal injury",
       fn: () =>
         choiceFunction(
           choiceMade,
           setChoiceMade,
           "Swamp7",
           choiceItems[1],
-          `You quickly fashion a straw out of the reed and submerge yourself in the water\n` +
-            ``,
-          `The message is`,
+          `You groan in agony, clasping at the mud around you to fake dried blood. As the orc\n` +
+            `approaches, you drop to the floor and grip your calf tightly. "It bit me!" you\n` +
+            `shout. The orc admits "uh, ok ok, I'll go get the Shaman". As he disappears you head\n` +
+            `him say something about how he will lose his job and his parents being so disappointed.\n` +
+            `In his absence, another orc approaches the cave. You up the ante on your act but he encourages\n` +
+            `quiet. "Shhh... I'm here to let you out. Can't say much, but the prophecy is too important\n` +
+            `for me not too. It's written that Gamooth will be slain by a hapless wanderer, ending the terror.\n` +
+            `I think you are that wanderer. You must go now, go via the armory and fullfil your destiny."\n` +
+            `He points and you run, heading into the armory. You notice a motivational slogan on the wall\n.`,
+          `The slogan is`,
           `The number is`
         ),
     },
     dead: {
-      description: "Hide in the tree trunk",
+      description: "Play dead in the cage",
       fn: () =>
         choiceFunction(
           choiceMade,
           setChoiceMade,
           "Swamp5",
           choiceItems[2],
-          `You conceal yourself in the hollow trunk of the tree. The creatures approach and\n` +
-            ``,
-          `The message is`,
+          `You collapse to the floor, feigning death. It takes a couple of moments for the guard\n` +
+            `to react appropriately, but eventually he runs, calling for help. Now is your chance.\n` +
+            `You bolt, crashing through the bars of the cage and through to the other side, heading\n` +
+            `for the outpost boundary, until, you're finally free. You steady your breathing.\n` +
+            `To avoid a repeat of this situation, you find a suitably sized stick and sharpen the end\n` +
+            `to a point. Your new make-shift weapon isn't perfect, but it'll do... for now.\n` +
+            `Stars spin around your head as you, exhausted, start to make your way towards the base of the\n` +
+            `mountain again. The stars appear to speak a language you can somehow understand.\n`,
+          `The stars say`,
           `The number is`
         ),
     },
@@ -260,7 +273,13 @@ export const Swamp4 = ({ reloadFlag, choiceItems }) => {
 
   //
   const welcomeText = [
-    "Captured by the orcs, you're placed prisoner in their camp. You devise a cunning plan to either feign death or injury to escape.",
+    "You're carried through the swamp on orc-back until you arrive at their settlement; a",
+    "crude outpost located on a rare dry mound in the swamp. There are many makeshift buildings",
+    "here. You spot a mess hall, lodgings and an armory. You're thrown into a small wooden cage",
+    "in the corner of the outpost. The wooden bars are flimsy and easily broken, but the cage is",
+    "under constant surveillance from a nearby orc. To get free, you must think of something. Running",
+    "would surely result in your death. But, noting that they clearly want you alive, maybe you can",
+    "feign an injury, or death? Perhaps that could buy you enough time to get free.",
     ".",
     "What will you do? (type 'help' for commands)",
   ];

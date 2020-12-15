@@ -6,7 +6,14 @@ import { Forest1, Forest2 } from "../terminals/Forest";
 import { Village1, Village2 } from "../terminals/Village";
 import { Tree1, Tree2, Tree3, Tree4, Tree5, Tree6 } from "../terminals/Tree";
 import { Clearing1 } from "../terminals/Clearing";
-import { Swamp1, Swamp2, Swamp3 } from "../terminals/Swamp";
+import {
+  Swamp1,
+  Swamp2,
+  Swamp3,
+  Swamp4,
+  Swamp5,
+  Swamp6,
+} from "../terminals/Swamp";
 import { Cave1 } from "../terminals/Cave";
 import { Castle1 } from "../terminals/Castle";
 import { Loading } from "../terminals/Loading";
@@ -64,6 +71,18 @@ const CYOAMapping = {
     2: 21,
   },
   Swamp3: {
+    1: 23,
+    2: 9,
+  },
+  Swamp4: {
+    1: 15,
+    2: 9,
+  },
+  Swamp5: {
+    1: 23,
+    2: 9,
+  },
+  Swamp6: {
     1: 23,
     2: 9,
   },
@@ -209,6 +228,27 @@ export const CYOATerminalManager = () => {
     } else if (playerDetails.location === "Swamp3") {
       return (
         <Swamp3
+          reloadFlag={incrementReloadCounter}
+          choiceItems={CYOAMapping[playerDetails.location]}
+        />
+      );
+    } else if (playerDetails.location === "Swamp4") {
+      return (
+        <Swamp4
+          reloadFlag={incrementReloadCounter}
+          choiceItems={CYOAMapping[playerDetails.location]}
+        />
+      );
+    } else if (playerDetails.location === "Swamp5") {
+      return (
+        <Swamp5
+          reloadFlag={incrementReloadCounter}
+          choiceItems={CYOAMapping[playerDetails.location]}
+        />
+      );
+    } else if (playerDetails.location === "Swamp6") {
+      return (
+        <Swamp6
           reloadFlag={incrementReloadCounter}
           choiceItems={CYOAMapping[playerDetails.location]}
         />
