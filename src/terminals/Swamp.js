@@ -197,7 +197,6 @@ export const Swamp3 = ({ reloadFlag, choiceItems }) => {
     },
   };
 
-  //
   const welcomeText = [
     "Tree trunk hiding leads to escape from the orcs. Surveylance is possible and you decide what vantage point to take",
     ".",
@@ -226,13 +225,13 @@ export const Swamp4 = ({ reloadFlag, choiceItems }) => {
           choiceItems[1],
           `You groan in agony, clasping at the mud around you to fake dried blood. As the orc\n` +
             `approaches, you drop to the floor and grip your calf tightly. "It bit me!" you\n` +
-            `shout. The orc admits "uh, ok ok, I'll go get the Shaman". As he disappears you head\n` +
+            `shout. The orc admits "uh, ok ok, I'll go get the Shaman". As he disappears you hear\n` +
             `him say something about how he will lose his job and his parents being so disappointed.\n` +
-            `In his absence, another orc approaches the cave. You up the ante on your act but he encourages\n` +
+            `In his absence, another orc approaches the cage. You up the ante on your act but he encourages\n` +
             `quiet. "Shhh... I'm here to let you out. Can't say much, but the prophecy is too important\n` +
-            `for me not too. It's written that Gamooth will be slain by a hapless wanderer, ending the terror.\n` +
-            `I think you are that wanderer. You must go now, go via the armory and fullfil your destiny."\n` +
-            `He points and you run, heading into the armory. You notice a motivational slogan on the wall\n.`,
+            `for me not to. It's written that Gamooth will be slain by a hapless wanderer, ending the terror.\n` +
+            `I think you are that wanderer. You must go now, go via the armory and fulfil your destiny."\n` +
+            `He points and you run, heading into the armory. You notice a motivational slogan on the wall.\n`,
           `The slogan is`,
           `The number is`
         ),
@@ -271,7 +270,6 @@ export const Swamp4 = ({ reloadFlag, choiceItems }) => {
     },
   };
 
-  //
   const welcomeText = [
     "You're carried through the swamp on orc-back until you arrive at their settlement; a",
     "crude outpost located on a rare dry mound in the swamp. There are many makeshift buildings",
@@ -296,31 +294,45 @@ export const Swamp5 = ({ reloadFlag, choiceItems }) => {
   const [choiceMade, setChoiceMade] = useState(false);
 
   const commands = {
-    axe: {
-      description: "Hide  the swamp water",
+    attack: {
+      description: "Reveal yourself and attack",
       fn: () =>
         choiceFunction(
           choiceMade,
           setChoiceMade,
-          "Swamp7",
+          "Swamp6",
           choiceItems[1],
-          `You quickly fashion a straw out of the reed and submerge yourself in the water\n` +
-            ``,
-          `The message is`,
+          `You reveal yourself with a yell, grabbing the orc from behind and squeezing your\n` +
+            `weapon into it's neck. "Why are you following me?!". The orc silently struggles\n` +
+            `against your grip and starts to reply in a hushed tone. "Shhh... I'm here to help you.\n` +
+            `If they know I'm here they'll kill me, but the prophecy is too important for me not to be.\n` +
+            `It's written that Gamooth will be slain by a hapless wanderer, ending his reign of terror.\n` +
+            `I think you are that wanderer. You must fulfil your destiny, but it's dangerous to go alone."\n` +
+            `"Please, take this." he drops the sword and, as you loosen your grip, he runs back into the swamp.\n` +
+            `You examine the sword. A little large for you, but the craftmanship is good.\n` +
+            `There are some runeson the hilt. You lean closer and translate them.\n`,
+          `The runes say`,
           `The number is`
         ),
     },
-    sword: {
-      description: "Hide in the tree trunk",
+    run: {
+      description: "Reveal yourself and run",
       fn: () =>
         choiceFunction(
           choiceMade,
           setChoiceMade,
-          "Swamp5",
+          "Swamp6",
           choiceItems[2],
-          `You conceal yourself in the hollow trunk of the tree. The creatures approach and\n` +
-            ``,
-          `The message is`,
+          `Silently, you rise and begin a run that quickly turns into a sprint. You're closely\n` +
+            `followed by footsteps behind you that are getting closer. Closer, until, you're tackled\n` +
+            `to the ground. The orc begins talking in a hushed tone "Shhh... I'm here to help you.\n` +
+            `If they know I'm here they'll kill me, but the prophecy is too important for me not to be.\n` +
+            `It's written that Gamooth will be slain by a hapless wanderer, ending his reign of terror.\n` +
+            `I think you are that wanderer. You must fulfil your destiny, but it's dangerous to go alone."\n` +
+            `"Please, take this." He rises from you and hands you a sword before running back into the swamp\n` +
+            `You examine the sword. A little large for you, but the craftmanship is good.\n` +
+            `There are some runeson the hilt. You lean closer and translate them.\n`,
+          `The runes say`,
           `The number is`
         ),
     },
@@ -338,9 +350,12 @@ export const Swamp5 = ({ reloadFlag, choiceItems }) => {
     },
   };
 
-  //
   const welcomeText = [
-    "You sneak into the armory, grabbing a weapon and escaping. You choose which weapon to grab",
+    "Back amongst the overgrowth of the swamp, you're making your way towards the moutain castle",
+    "ahead of you. You pause. Are those... Footsteps? You ready yourself for another orc ambush.",
+    "Through the hanging vines and swamp trees, you catch a glimmer of light from a blade. You wait",
+    "until the perfect moment to reveal yourself. It sounds like there is only one, and the element",
+    "of surprise gives you the advantage.",
     ".",
     "What will you do? (type 'help' for commands)",
   ];
@@ -399,9 +414,69 @@ export const Swamp6 = ({ reloadFlag, choiceItems }) => {
     },
   };
 
-  //
   const welcomeText = [
     "You arrive at the foot of the mountain, ready to scale. Noticing a wooden door, you decide which route to take",
+    ".",
+    "What will you do? (type 'help' for commands)",
+  ];
+  return (
+    <CYOATerminal
+      commands={commands}
+      startText={welcomeText}
+      location="Swamp"
+    />
+  );
+};
+
+export const Swamp7 = ({ reloadFlag, choiceItems }) => {
+  const [choiceMade, setChoiceMade] = useState(false);
+
+  const commands = {
+    axe: {
+      description: "Hide  the swamp water",
+      fn: () =>
+        choiceFunction(
+          choiceMade,
+          setChoiceMade,
+          "Swamp7",
+          choiceItems[1],
+          `You quickly fashion a straw out of the reed and submerge yourself in the water\n` +
+            ``,
+          `The message is`,
+          `The number is`
+        ),
+    },
+    sword: {
+      description: "Hide in the tree trunk",
+      fn: () =>
+        choiceFunction(
+          choiceMade,
+          setChoiceMade,
+          "Swamp5",
+          choiceItems[2],
+          `You conceal yourself in the hollow trunk of the tree. The creatures approach and\n` +
+            ``,
+          `The message is`,
+          `The number is`
+        ),
+    },
+    continue: {
+      description: "Continue with the next section of your journey.",
+      fn: async function () {
+        if (!choiceMade) {
+          return `You must select the path before walking it...`;
+        } else {
+          await timeout(2000);
+          reloadFlag();
+          return `Your selection has been made. The journey continues tomorrow.`;
+        }
+      },
+    },
+  };
+
+  //
+  const welcomeText = [
+    "You sneak into the armory, grabbing a weapon and escaping. You choose which weapon to grab",
     ".",
     "What will you do? (type 'help' for commands)",
   ];

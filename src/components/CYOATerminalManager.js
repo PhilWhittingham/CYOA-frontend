@@ -13,6 +13,7 @@ import {
   Swamp4,
   Swamp5,
   Swamp6,
+  Swamp7,
 } from "../terminals/Swamp";
 import { Cave1 } from "../terminals/Cave";
 import { Castle1 } from "../terminals/Castle";
@@ -80,11 +81,15 @@ const CYOAMapping = {
   },
   Swamp5: {
     1: 23,
-    2: 9,
+    2: 15,
   },
   Swamp6: {
     1: 23,
     2: 9,
+  },
+  Swamp7: {
+    1: 20,
+    2: 21,
   },
 };
 
@@ -249,6 +254,13 @@ export const CYOATerminalManager = () => {
     } else if (playerDetails.location === "Swamp6") {
       return (
         <Swamp6
+          reloadFlag={incrementReloadCounter}
+          choiceItems={CYOAMapping[playerDetails.location]}
+        />
+      );
+    } else if (playerDetails.location === "Swamp7") {
+      return (
+        <Swamp7
           reloadFlag={incrementReloadCounter}
           choiceItems={CYOAMapping[playerDetails.location]}
         />
