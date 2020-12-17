@@ -85,7 +85,7 @@ const CYOAMapping = {
   },
   Swamp6: {
     1: 23,
-    2: 9,
+    2: 21,
   },
   Swamp7: {
     1: 20,

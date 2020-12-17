@@ -373,29 +373,35 @@ export const Swamp6 = ({ reloadFlag, choiceItems }) => {
 
   const commands = {
     door: {
-      description: "Hide  the swamp water",
+      description: "Take the door",
       fn: () =>
         choiceFunction(
           choiceMade,
           setChoiceMade,
           "Castle1",
           choiceItems[1],
-          `You quickly fashion a straw out of the reed and submerge yourself in the water\n` +
-            ``,
+          `You open the door. Inside it is pitch black but as your eyes adjust to the darkness\n` +
+            `you're able to make out a torch on the wall. Setting aside your weapon, you light\n` +
+            `the torch, revealing a long stone corridor. You hear nothing as you start to edge\n` +
+            `your way along the corridor. The door shuts violently behind you, and in your panic,\n` +
+            `you trip on the uneven cobblestone floor. Rising, you notice a message scratched into the\n` +
+            `stone.`,
           `The message is`,
           `The number is`
         ),
     },
     mountain: {
-      description: "Hide in the tree trunk",
+      description: "Climb the mountain",
       fn: () =>
         choiceFunction(
           choiceMade,
           setChoiceMade,
           "Castle2",
           choiceItems[2],
-          `You conceal yourself in the hollow trunk of the tree. The creatures approach and\n` +
-            ``,
+          `You begin to make your way up the mountain. One shaky grasp at a time, you eventually\n` +
+            `arrive at the summit. At this point, you can easily see the grandeur of the castle ahead\n` +
+            `of you. Oddly desolate, you cross an unmanned bridge to arrive at a door. There's a message\n` +
+            `pinned to it that you can't quite understand.`,
           `The message is`,
           `The number is`
         ),
@@ -415,9 +421,13 @@ export const Swamp6 = ({ reloadFlag, choiceItems }) => {
   };
 
   const welcomeText = [
-    "You arrive at the foot of the mountain, ready to scale. Noticing a wooden door, you decide which route to take",
+    "You arrive at the foot of the mountain. Your eyes trail upwards, following a path towards",
+    "the keep. The surrounding light seems to fade as the mountain rises up to meet a circling cloud",
+    "of fog that appears to be in constant movement. Regardless, the path ahead seems safe enough.",
+    "As you assess the climb one more time, you glance left and notice a door built in to the side of",
+    "the mountain. Was that there before? It's frail in its construction and appears to bare no lock.",
     ".",
-    "What will you do? (type 'help' for commands)",
+    "What path will you take? (type 'help' for commands)",
   ];
   return (
     <CYOATerminal
@@ -474,7 +484,6 @@ export const Swamp7 = ({ reloadFlag, choiceItems }) => {
     },
   };
 
-  //
   const welcomeText = [
     "You sneak into the armory, grabbing a weapon and escaping. You choose which weapon to grab",
     ".",
