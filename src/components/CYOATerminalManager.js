@@ -22,6 +22,10 @@ import {
   Castle3,
   Castle4,
   Castle5,
+  Castle6,
+  Castle7,
+  Castle8,
+  Castle9,
 } from "../terminals/Castle";
 import { Loading } from "../terminals/Loading";
 import { Void } from "../terminals/Void";
@@ -109,10 +113,26 @@ const CYOAMapping = {
     2: 21,
   },
   Castle4: {
-    1: 20,
+    1: 22,
     2: 21,
   },
   Castle5: {
+    1: 20,
+    2: 21,
+  },
+  Castle6: {
+    1: 20,
+    2: 21,
+  },
+  Castle7: {
+    1: 20,
+    2: 21,
+  },
+  Castle8: {
+    1: 20,
+    2: 21,
+  },
+  Castle9: {
     1: 20,
     2: 21,
   },
@@ -336,6 +356,35 @@ export const CYOATerminalManager = () => {
     } else if (playerDetails.location === "Castle5") {
       return (
         <Castle5
+          reloadFlag={incrementReloadCounter}
+          choiceItems={CYOAMapping[playerDetails.location]}
+        />
+      );
+    } else if (playerDetails.location === "Castle6") {
+      return (
+        <Castle6
+          reloadFlag={incrementReloadCounter}
+          choiceItems={CYOAMapping[playerDetails.location]}
+        />
+      );
+    } else if (playerDetails.location === "Castle7") {
+      return (
+        <Castle7
+          reloadFlag={incrementReloadCounter}
+          choiceItems={CYOAMapping[playerDetails.location]}
+        />
+      );
+    } else if (playerDetails.location === "Castle8") {
+      return (
+        <Castle8
+          reloadFlag={incrementReloadCounter}
+          choiceItems={CYOAMapping[playerDetails.location]}
+          hasHealing={true}
+        />
+      );
+    } else if (playerDetails.location === "Castle9") {
+      return (
+        <Castle9
           reloadFlag={incrementReloadCounter}
           choiceItems={CYOAMapping[playerDetails.location]}
         />
