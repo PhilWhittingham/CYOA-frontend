@@ -316,8 +316,8 @@ export const Castle6 = ({ reloadFlag, choiceItems }) => {
           choiceItems[1],
           `Your right leg buckles and you launch yourself under the oncoming blade. It\n` +
             `narrowly misses your back as you roll to the beast's right hand side. He spins.\n` +
-            `following the sword which eventually crashes against the stone floor, sending sparks.` +
-            `"Fast eh? Perhaps you are the one of which the prophecy foretold."`,
+            `following the sword which eventually crashes against the stone floor, sending sparks.\n` +
+            `"Fast eh? Perhaps you are the one of which the prophecy foretold."\n`,
           `A package hint is`,
           `Open package`
         ),
@@ -334,7 +334,7 @@ export const Castle6 = ({ reloadFlag, choiceItems }) => {
             `dive to the creatures left, but the heavy sword catches you on its way around.\n` +
             `Hot metal digs into the flesh on your right forearm. As you finish your manoeuvre,\n` +
             `you retreat away from Gamooth. The wound is not fatal, but will surely impair your\n` +
-            `ability in combat. "Pathetic..."`,
+            `ability in combat. "Pathetic..."\n`,
           `A package hint is`,
           `Open package`
         ),
@@ -488,6 +488,22 @@ export const Castle8 = ({ reloadFlag, choiceItems, hasHealing }) => {
     },
   };
 
+  if (hasHealing) {
+    commands["heal"] = {
+      description: "Regain some health using your healing item",
+      fn: () =>
+        choiceFunction(
+          choiceMade,
+          setChoiceMade,
+          "",
+          choiceItems[2],
+          `\n` + `\n`,
+          `A package hint is`,
+          `Open package`
+        ),
+    };
+  }
+
   const welcomeText = [
     '"My might is unparalleled. My body is iron. You shall not leave here alive". Gamooth readies',
     "another swing.",
@@ -507,7 +523,7 @@ export const Castle9 = ({ reloadFlag, choiceItems }) => {
   const [choiceMade, setChoiceMade] = useState(false);
 
   const commands = {
-    right: {
+    attack: {
       description: "Dive right",
       fn: () =>
         choiceFunction(
@@ -548,7 +564,7 @@ export const Castle9 = ({ reloadFlag, choiceItems }) => {
   };
 
   const welcomeText = [
-    "You're in the entrance hall. Moving forward triggers a trap, do you dive left or right",
+    "Sensing victory, you sprint to the greatsword. Gamooth remains stunned behind you.",
     ".",
     "Which path will you choose. (type 'help' for commands)",
   ];
